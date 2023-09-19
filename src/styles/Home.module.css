@@ -10,8 +10,20 @@
   padding: 24px;
 }
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1224px;
+  width: 100%;
+  margin: 0 auto;
+
+  padding: 24px;
+}
+
 .nav a {
-  color: '#8257e5';
+  color: #8257e5;
 }
 
 .content {
@@ -19,7 +31,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 24px;
-  color: '#555';
+  color: #555;
 }
 
 .content h2 {
