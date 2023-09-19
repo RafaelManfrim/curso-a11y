@@ -3,10 +3,14 @@ import Image from "next/image"
 import logoImg from "@/assets/logo.svg"
 
 import styles from "@/styles/Home.module.css"
+import Head from "next/head"
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Desenvolvendo uma Web Acessível | Rocketseat Blog</title>
+      </Head>
       <header className={styles.header}>
         <Image src={logoImg} width={286 / 2} alt="Rocketseat Blog" />
 
@@ -21,12 +25,12 @@ export default function Home() {
       <main>
         <article className={styles.content}>
           <header>
-            <h2>Desenvolvendo uma Web Acessível</h2>
-            <h4>Protocolos e diretrizes orientam o desenvolvimento de tecnologias acessíveis</h4>
+            <h1>Desenvolvendo uma Web Acessível</h1>
+            <span>Protocolos e diretrizes orientam o desenvolvimento de tecnologias acessíveis</span>
           </header>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit repudiandae, dignissimos ipsam molestiae odio nam a consequuntur maxime quam, animi voluptates consectetur omnis, id officiis. Itaque recusandae dolorum quia fuga?</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit repudiandae, dignissimos ipsam molestiae odio nam a consequuntur maxime quam, animi voluptates consectetur omnis, id officiis. Itaque recusandae dolorum quia fuga?</p>
-          <h3>O que é acessibilidade afinal?</h3>
+          <h2>O que é acessibilidade afinal?</h2>
         </article>
       </main>
       <footer className={styles.footer}>
