@@ -31,6 +31,8 @@ export default function Home() {
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit repudiandae, dignissimos ipsam molestiae odio nam a consequuntur maxime quam, animi voluptates consectetur omnis, id officiis. Itaque recusandae dolorum quia fuga?</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit repudiandae, dignissimos ipsam molestiae odio nam a consequuntur maxime quam, animi voluptates consectetur omnis, id officiis. Itaque recusandae dolorum quia fuga?</p>
           <h2>O que é acessibilidade afinal?</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit repudiandae, dignissimos ipsam molestiae odio nam a consequuntur maxime quam, animi voluptates consectetur omnis, id officiis. Itaque recusandae dolorum quia fuga?</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit repudiandae, dignissimos ipsam molestiae odio nam a consequuntur maxime quam, animi voluptates consectetur omnis, id officiis. Itaque recusandae dolorum quia fuga?</p>
         </article>
       </main>
       <footer className={styles.footer}>

@@ -21,6 +21,13 @@
   padding: 24px;
 }
 
+.content header {
+  background-color: #202024;
+  border-radius: 5px;
+  padding: 24px;
+  text-align: center;
+}
+
 .content h1 {
   font-size: 2rem;
   margin-bottom: 16px;
