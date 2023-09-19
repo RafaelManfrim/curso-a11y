@@ -1,11 +1,20 @@
+'use client'
+
 import Image from "next/image"
 
 import logoImg from "@/assets/logo.svg"
 
 import styles from "@/styles/Home.module.css"
 import Head from "next/head"
+import { useState } from "react"
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  function handleOpenModal() {
+    setIsModalOpen(true)
+  }
+
   return (
     <>
       <Head>
@@ -39,11 +48,22 @@ export default function Home() {
         <Image src={logoImg} width={286 / 2} alt="Rocketseat Blog" />
 
         <nav className={styles.nav} aria-label="Navegação do Rodapé">
-          <a href="">
+          <button type="button" onClick={handleOpenModal}>
             Termos de uso
-          </a>
+          </button>
         </nav>
       </footer>
+      {isModalOpen && (
+        <div className={styles.modal}>
+          <h2>Termos de uso</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur amet molestiae enim quidem repellendus voluptas fugiat, aliquid aperiam hic ab sit placeat eaque expedita dolor quaerat. Obcaecati, blanditiis laudantium.</p>
+          <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur amet molestiae enim quidem repellendus voluptas fugiat.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur amet molestiae enim quidem repellendus voluptas fugiat, aliquid aperiam hic ab sit placeat eaque expedita dolor quaerat.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur amet molestiae enim quidem repellendus voluptas fugiat, aliquid aperiam hic ab sit placeat eaque expedita dolor quaerat. Obcaecati, blanditiis laudantium.</li>
+          </ul>
+        </div>
+      )}
     </>
   )
 }
