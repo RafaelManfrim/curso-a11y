@@ -1,27 +1,14 @@
 'use client'
 
+import Head from "next/head"
 import Image from "next/image"
+import * as Dialog from '@radix-ui/react-dialog'
 
 import logoImg from "@/assets/logo.svg"
 
 import styles from "@/styles/Home.module.css"
-import Head from "next/head"
-import { useEffect, useRef, useState } from "react"
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const modalRef = useRef<HTMLDivElement>(null)
-
-  function handleOpenModal() {
-    setIsModalOpen(true)
-  }
-
-  useEffect(() => {
-    if (isModalOpen) {
-      modalRef?.current?.focus()
-    }
-  }, [isModalOpen])
-
   return (
     <>
       <Head>
@@ -55,22 +42,32 @@ export default function Home() {
         <Image src={logoImg} width={286 / 2} alt="Rocketseat Blog" />
 
         <nav className={styles.nav} aria-label="Navegação do Rodapé">
-          <button type="button" onClick={handleOpenModal} aria-controls="modal">
-            Termos de uso
-          </button>
+          <Dialog.Root>
+            <Dialog.Trigger asChild>
+              <button type="button">
+                Termos de uso
+              </button>
+            </Dialog.Trigger>
+            <Dialog.Portal>
+              <Dialog.Overlay className={styles.overlay} />
+              <Dialog.Content className={styles.modal}>
+                <Dialog.Title>Termos de uso</Dialog.Title>
+                <Dialog.Description>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur amet molestiae enim quidem repellendus voluptas fugiat, aliquid aperiam hic ab sit placeat eaque expedita dolor quaerat. Obcaecati, blanditiis laudantium.</p>
+                  <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur amet molestiae enim quidem repellendus voluptas fugiat.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur amet molestiae enim quidem repellendus voluptas fugiat, aliquid aperiam hic ab sit placeat eaque expedita dolor quaerat.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur amet molestiae enim quidem repellendus voluptas fugiat, aliquid aperiam hic ab sit placeat eaque expedita dolor quaerat. Obcaecati, blanditiis laudantium.</li>
+                  </ul>
+                </Dialog.Description>
+                <Dialog.Close asChild>
+                  <button className={styles.closeModalButton}>Fechar</button>
+                </Dialog.Close>
+              </Dialog.Content>
+            </Dialog.Portal>
+          </Dialog.Root>
         </nav>
       </footer>
-      {isModalOpen && (
-        <div ref={modalRef} id="modal" className={styles.modal} role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" tabIndex={-1}>
-          <h2 id="modal-title">Termos de uso</h2>
-          <p id="modal-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur amet molestiae enim quidem repellendus voluptas fugiat, aliquid aperiam hic ab sit placeat eaque expedita dolor quaerat. Obcaecati, blanditiis laudantium.</p>
-          <ul>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur amet molestiae enim quidem repellendus voluptas fugiat.</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur amet molestiae enim quidem repellendus voluptas fugiat, aliquid aperiam hic ab sit placeat eaque expedita dolor quaerat.</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur amet molestiae enim quidem repellendus voluptas fugiat, aliquid aperiam hic ab sit placeat eaque expedita dolor quaerat. Obcaecati, blanditiis laudantium.</li>
-          </ul>
-        </div>
-      )}
     </>
   )
 }
